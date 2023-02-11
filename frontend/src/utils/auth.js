@@ -1,4 +1,4 @@
-this._baseUrl = 'https://api.julianrb-around.students.nomoredomainssbs.ru/';
+const baseUrl = 'https://api.julianrb-around.students.nomoredomainssbs.ru/';
 
 const register = function (email, password) {
   return fetch(`${baseUrl}signup`, {
