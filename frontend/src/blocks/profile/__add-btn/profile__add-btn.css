@@ -1,0 +1,28 @@
+.profile__add-btn {
+  background: none;
+  background-image: url(../../../images/add-button.png);
+  height: 50px;
+  width: 100%;
+  max-width: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border: 2px solid white;
+  padding: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 800px) {
+  .profile__add-btn {
+    max-width: 282px;
+  }
+}
+
+.profile__add-btn:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}

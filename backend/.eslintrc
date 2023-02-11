@@ -1,0 +1,7 @@
+{
+  "extends": "airbnb-base",
+  "allow": ["_id"],
+  "rules": {
+    "no-unused-vars": ["error", { "argsIgnorePattern": "next" }]
+  }
+}

@@ -1,0 +1,14 @@
+.profile__text-container {
+  display: -ms-grid;
+  display: grid;
+  margin: 0 auto 0 30px;
+  max-width: 500px;
+}
+
+@media screen and (max-width: 800px) {
+  .profile__text-container {
+    margin: 0;
+    text-align: center;
+    padding-top: 26px;
+  }
+}

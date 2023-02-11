@@ -1,0 +1,12 @@
+.authorization-form__footer {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  align-self: center;
+  margin: 0;
+  padding: 15px 0 80px;
+  text-decoration: none;
+}

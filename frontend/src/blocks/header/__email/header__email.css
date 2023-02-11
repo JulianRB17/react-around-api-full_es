@@ -1,0 +1,23 @@
+.header__email {
+  color: #ffffff;
+  margin: 51px 0 46px auto;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.header__email_hidden {
+  opacity: 0%;
+}
+
+.header__email_hidden:hover {
+  cursor: default;
+}
+
+@media screen and (max-width: 450px) {
+  .header__email {
+    display: none;
+  }
+}

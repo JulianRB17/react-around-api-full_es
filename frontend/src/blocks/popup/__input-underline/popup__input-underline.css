@@ -1,0 +1,10 @@
+.popup__input-underline {
+  border-bottom: 1px solid #000000;
+  opacity: 0.2;
+  width: 100%;
+}
+
+.popup__input-underline_error {
+  border-color: #ff0000;
+  opacity: 1;
+}

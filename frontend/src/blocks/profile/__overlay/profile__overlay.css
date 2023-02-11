@@ -1,0 +1,15 @@
+.profile__overlay {
+  background-color: black;
+  opacity: 0;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  position: relative;
+  z-index: 2;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+.profile__overlay:hover {
+  opacity: 0.8;
+}

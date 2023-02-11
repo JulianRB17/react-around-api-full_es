@@ -1,0 +1,23 @@
+.header__link {
+  margin: 51px 0 46px 24px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-decoration: none;
+  color: #a9a9a9;
+}
+
+@media screen and (max-width: 880px) {
+  .header__link {
+    margin-right: 27px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header__link {
+    font-size: 14px;
+    margin: 51px 27px 46px auto;
+  }
+}

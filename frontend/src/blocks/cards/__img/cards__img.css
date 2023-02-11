@@ -1,0 +1,10 @@
+.cards__img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 282px;
+  height: 282px;
+}
+
+.cards__img:hover {
+  cursor: pointer;
+}

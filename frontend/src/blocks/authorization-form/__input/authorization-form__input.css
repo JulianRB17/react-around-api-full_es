@@ -1,0 +1,33 @@
+.authorization-form__input {
+  padding-top: 13px;
+  background-color: black;
+  border-color: black;
+  border-bottom: 2px solid #cccccc;
+  padding-bottom: 13px;
+  margin-bottom: 17px;
+  color: #ffffff;
+}
+
+.authorization-form__input::-webkit-input-placeholder {
+  color: #cccccc;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.authorization-form__input:-ms-input-placeholder {
+  color: #cccccc;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.authorization-form__input::placeholder {
+  color: #cccccc;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}

@@ -1,0 +1,25 @@
+.popup__input {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  border: none;
+  width: 100%;
+  padding-bottom: 13px;
+}
+
+.popup__input:nth-of-type(2) {
+  margin-top: 30px;
+}
+
+.popup__input::-webkit-input-placeholder {
+  color: #cccccc;
+}
+
+.popup__input:-ms-input-placeholder {
+  color: #cccccc;
+}
+
+.popup__input::placeholder {
+  color: #cccccc;
+}

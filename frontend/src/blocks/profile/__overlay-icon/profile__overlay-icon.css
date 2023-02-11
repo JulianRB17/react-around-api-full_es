@@ -1,0 +1,14 @@
+.profile__overlay-icon {
+  background-image: url(../../../images/profile-ocverlay-profile-icon.svg);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background-size: 26px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  position: relative;
+  z-index: 3;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
