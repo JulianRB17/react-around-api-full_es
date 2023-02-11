@@ -10,7 +10,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const auth = require('./middlewares/auth');
 require('dotenv').config();
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3001 } = process.env;
 const app = express();
 app.use(cors());
 app.options('*', cors());
@@ -51,6 +51,7 @@ app.post(
         )
         .custom(urlValidator),
       email: Joi.string().required().custom(emailValidator),
+      password: Joi.string().required(),
     }),
   }),
   createUser

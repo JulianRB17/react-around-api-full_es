@@ -104,7 +104,9 @@ export default function App() {
   function handleUpdateUser(data) {
     api
       .changeUserInfo(data)
-      .then((data) => setCurrentUser(data.user))
+      .then((newData) => {
+        setCurrentUser(newData.user);
+      })
       .catch((err) => console.error(err));
     closeAllPopups();
   }
@@ -113,7 +115,6 @@ export default function App() {
     api
       .setProfilePic(data)
       .then((data) => {
-        console.log(data);
         setCurrentUser(data.user);
       })
       .catch((err) => console.error(err));
@@ -158,8 +159,10 @@ export default function App() {
 
   function handleUserRegistration() {
     register(email, password)
-      .then((res) => {
-        if (res) {
+      .then((data) => {
+        if (data.token) {
+          localStorage.setItem('jwt', data.token);
+          setJwt(data.token);
           setPassword('');
           navigate('/', { replace: true });
           setAuthorized(true);
@@ -173,8 +176,10 @@ export default function App() {
 
   function handleUserLogin() {
     authorize(email, password)
-      .then((res) => {
-        if (res) {
+      .then((data) => {
+        if (data.token) {
+          setJwt(data.token);
+          localStorage.setItem('jwt', data.token);
           setPassword('');
           navigate('/', { replace: true });
           setAuthorized(true);

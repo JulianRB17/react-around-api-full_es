@@ -1,4 +1,5 @@
-const baseUrl = 'https://api.julianrb-around.students.nomoredomainssbs.ru/';
+// const baseUrl = 'https://api.julianrb-around.students.nomoredomainssbs.ru/';
+const baseUrl = 'http://localhost:3001/';
 
 const register = function (email, password) {
   return fetch(`${baseUrl}signup`, {
@@ -6,12 +7,11 @@ const register = function (email, password) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
   })
-    .then((response) => {
-      if (response.status === 400)
+    .then((res) => {
+      if (res.status === 400)
         throw new Error('uno de los campos se rellenó de forma incorrecta ');
-      else return response.json();
+      else return res.json();
     })
-    .then((res) => res)
     .catch((err) => console.error(err));
 };
 
@@ -29,12 +29,6 @@ const authorize = function (email, password) {
         throw new Error('No se ha proporcionado uno o más campos');
       } else {
         return res.json();
-      }
-    })
-    .then((data) => {
-      if (data.token) {
-        localStorage.setItem('jwt', data.token);
-        return data;
       }
     })
     .catch((err) => console.error(err));

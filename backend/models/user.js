@@ -1,13 +1,5 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
-// const Joi = require('joi');
-
-// const urlValidator = function (value, helpers) {
-//   if (validator.isURL(value)) {
-//     return value;
-//   }
-//   return helpers.error('string.uri');
-// };
 
 const userSchema = new mongoose.Schema({
   name: {

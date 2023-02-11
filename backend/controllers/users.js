@@ -3,7 +3,13 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-const { JWT_SECRET } = process.env;
+let JWT_SECRET;
+
+if (process.env.NODE_ENV !== 'production') {
+  JWT_SECRET = process.env.JWT_SECRET;
+} else {
+  JWT_SECRET = 'secreto';
+}
 
 const error400 = function (err) {
   err.message = 'Se pasaron datos inválidos';
@@ -55,7 +61,10 @@ const createUser = async function (req, res, next) {
       email,
       password: hash,
     });
-    res.send({ newUser });
+    const token = jwt.sign({ _id: newUser._id }, JWT_SECRET, {
+      expiresIn: '7d',
+    });
+    res.send({ token });
   } catch (err) {
     if (err.code === 11000) {
       error401(err, 'Ya existe un usuario con este email');
@@ -65,46 +74,6 @@ const createUser = async function (req, res, next) {
     }
     next(err);
   }
-};
-
-const updateUser = function (req, res, next) {
-  const { name, about } = req.body;
-  const userId = req.user._id;
-  if (!name || !about) {
-    throw new Error('typeError');
-  }
-  User.findById(userId)
-    .then((user) => {
-      user.name = name;
-      user.about = about;
-      res.send({ user });
-    })
-    .catch((err) => {
-      if (err.message === 'typeError') {
-        error400(err);
-      }
-      next(err);
-    });
-};
-
-const updateAvatar = function (req, res, next) {
-  const { avatar } = req.body;
-  const userId = req.user._id;
-
-  User.findById(userId)
-    .then((user) => {
-      if (!avatar) {
-        throw new Error('typeError');
-      }
-      user.avatar = avatar;
-      res.send({ user });
-    })
-    .catch((err) => {
-      if (err.message === 'TypeError') {
-        error400(err);
-      }
-      next(err);
-    });
 };
 
 const login = async function (req, res, next) {
@@ -125,6 +94,37 @@ const login = async function (req, res, next) {
     }
     next(err);
   }
+};
+
+const updateUser = function (req, res, next) {
+  const { name, about } = req.body;
+  const userId = req.user._id;
+  User.findByIdAndUpdate(userId, { name: name, about: about }, { new: true })
+    .then((user) => {
+      res.send({ user });
+    })
+    .catch((err) => {
+      if (err.message === 'typeError') {
+        error400(err);
+      }
+      next(err);
+    });
+};
+
+const updateAvatar = function (req, res, next) {
+  const { avatar } = req.body;
+  const userId = req.user._id;
+
+  User.findByIdAndUpdate(userId, { avatar: avatar }, { new: true })
+    .then((user) => {
+      res.send({ user });
+    })
+    .catch((err) => {
+      if (err.message === 'TypeError') {
+        error400(err);
+      }
+      next(err);
+    });
 };
 
 const getUserData = async function (req, res, next) {

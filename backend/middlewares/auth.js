@@ -1,9 +1,11 @@
 const jwt = require('jsonwebtoken');
 
+let JWT_SECRET;
+
 if (process.env.NODE_ENV !== 'production') {
-  const { JWT_SECRET } = process.env;
+  JWT_SECRET = process.env.JWT_SECRET;
 } else {
-  const JWT_SECRET = 'secreto';
+  JWT_SECRET = 'secreto';
 }
 
 module.exports = async (req, res, next) => {

@@ -7,7 +7,8 @@ class Api {
       },
     }
   ) {
-    this._baseUrl = 'https://api.julianrb-around.students.nomoredomainssbs.ru/';
+    // this._baseUrl = 'https://api.julianrb-around.students.nomoredomainssbs.ru/';
+    this._baseUrl = 'http://localhost:3001/';
     this._options = options;
   }
 
@@ -73,7 +74,7 @@ class Api {
   setProfilePic(data) {
     this._specificUrl = 'users/me/avatar';
     this._options.method = 'PATCH';
-    this._options.body = JSON.stringify({ avatar: data.avatar });
+    this._options.body = JSON.stringify(data);
     return this._fetchData();
   }
 }
