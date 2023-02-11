@@ -2,7 +2,7 @@
 
 ## API creada para el sprint 15 del bootcamp Practicum de Yandex.
 
-Se puede revisar la página en el siguiente [dominio](https://wwww.julianrb-around.students.nomoredomainssbs.ru/).
+Se puede revisar la página en el siguiente [dominio](https://www.julianrb-around.students.nomoredomainssbs.ru/).
 
 El frontend de esta API fue desarrollado usando la biblioteca de JavaScript: React, el backend usa Node.js con el framework Express además de MongoDB como base de datos no relacional.
 
@@ -22,7 +22,7 @@ Para usar la web app se requiere una autorización.
 
 ## Frontend endpoints
 
-Se puede acceder a través de https://wwww.julianrb-around.students.nomoredomainssbs.ru/ o https://julianrb-around.students.nomoredomainssbs.ru/
+Se puede acceder a través de https://www.julianrb-around.students.nomoredomainssbs.ru/ o https://julianrb-around.students.nomoredomainssbs.ru/
 
 - `/` - Página principal, si no hay usuario loggeado se redirecciona a `/signin`.
   En este endpoint se pueden generar tarjetas, likearlas y eliminar las generadas propias. Además de cambiar nombre, ocupación y foto de perfil del usuario.
