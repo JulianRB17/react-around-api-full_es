@@ -7,8 +7,7 @@ class Api {
       },
     }
   ) {
-    // this._baseUrl = 'https://api.julianrb-around.students.nomoredomainssbs.ru/';
-    this._baseUrl = 'http://localhost:3001/';
+    this._baseUrl = 'https://api.julianrb-around.students.nomoredomainssbs.ru/';
     this._options = options;
   }
 

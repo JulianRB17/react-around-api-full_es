@@ -1,5 +1,4 @@
-// const baseUrl = 'https://api.julianrb-around.students.nomoredomainssbs.ru/';
-const baseUrl = 'http://localhost:3001/';
+const baseUrl = 'https://api.julianrb-around.students.nomoredomainssbs.ru/';
 
 const register = function (email, password) {
   return fetch(`${baseUrl}signup`, {
